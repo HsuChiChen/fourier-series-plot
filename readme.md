@@ -38,7 +38,7 @@ Time : 2022 summer
 4. [用1000个卫星轨道画一只miku!](https://www.bilibili.com/video/av28374720)用process畫初音。
 5. [But what is a Fourier series? From heat flow to drawing with circles](https://www.youtube.com/watch?v=r6sGWTCMz2k)，在Youtube平台上搜尋Fourier Series前幾名會是這部影片，3Blue1Brown擅長使用精美的動畫講解數學的基本概念，使用自己開發的manim專案畫圖。
 
-其中最值得看的是第3部與第5部影片，使用複數傅立葉畫圖大致概念可以想像在原始封閉的曲線，取樣足夠多的點足以"代表"這個封閉的曲線，將取樣點做FFT(DFT的一種快速演算法實現)，投影至不同旋轉頻率的單位圓所形成的"基底"所得的係數，將這些係數與其對應的基底相加，就可以合成出原始的訊號。
+其中最值得看的是第3部與第5部影片，使用複數傅立葉畫圖大致概念可以想像在原始封閉的曲線，取樣足夠多的點足以"代表"這個封閉的曲線，將取樣點做FFT(DFT的一種快速演算法實現)，投影至不同旋轉頻率的單位圓這些"基底"所得的係數，將各個不同係數與其對應的基底加總，就可以合成出原始的訊號。
 $$f(t) = \sum^\infty_{k = -\infty}c_ke^{jk\omega_0t} \qquad\text{where}\; c_k = \frac{1}{T}\int_Tf(t)e^{-jk\omega_0t}dt$$
 $f(t)$為實數時傅立葉係數會共軛，做訊號重建時代表單位圓正轉與反轉的速率相同，因此相互抵銷，合成出來的訊號只會在實數軸移動；當$f(t)$為複數時，單位圓正轉與反轉不會相互抵銷，會在複數平面上畫出以上demo的動畫。
 
