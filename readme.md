@@ -34,7 +34,7 @@ Time : 2022 summer
 梳理一下網路上討論複數傅立葉級數畫圖相關文章與影片的時間線
 1. [Ptolemy and Homer (Simpson)](https://www.youtube.com/watch?v=QVuU2YCwHjw)阿根廷的教授畫出辛普森家族的荷馬·辛普森。
 2. [How can I draw a Homer with epicycloids?](https://mathematica.stackexchange.com/questions/171755/how-can-i-draw-a-homer-with-epicycloids)在Stack Exchange/Mathematica子板上有人自問自答上面影片要如何用Mathematica實現，有附詳細的解題流程與Mathematica的代碼。
-3. [Epicycles, complex Fourier series and Homer Simpson's orbit](https://www.youtube.com/watch?v=qS4H6PEcCCA)完整解釋上面影片與文章的觀念。
+3. [Epicycles, complex Fourier series and Homer Simpson's orbit](https://www.youtube.com/watch?v=qS4H6PEcCCA)完整解釋上面影片與文章的觀念。從日心說的均輪和本輪(deferent and epicycle)說起，一個圓之上再加上另一個運動的圓圈，另一個運動的圓圈再加上另一個運動的圓圈去解釋行星軌道，由日心說提出幾百後年的傅立葉分析可以解釋為什麼過去日心說估計的軌道會這麼準確 - 足夠數量的本輪(epicycles)，任何平滑曲線都可以近似。(不過我們都知道最後被克卜勒的橢圓軌道和牛頓力學推翻)
 4. [用1000个卫星轨道画一只miku!](https://www.bilibili.com/video/av28374720)用process畫初音。
 5. [But what is a Fourier series? From heat flow to drawing with circles](https://www.youtube.com/watch?v=r6sGWTCMz2k)，在Youtube平台上搜尋Fourier Series前幾名會是這部影片，3Blue1Brown擅長使用精美的動畫講解數學的基本概念，使用自己開發的manim專案畫圖。
 
