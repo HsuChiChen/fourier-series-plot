@@ -2,11 +2,11 @@
 Time : 2022 summer
 
 ## GIF demo
-- 台灣
+- 台灣<br>
 ![](img/1fourier_plot_taiwan.gif)
-- 愛心
+- 愛心<br>
   ![](img/2fourier_plot_heart.gif)
-- Linux企鵝(Tux)
+- Linux企鵝(Tux)<br>
 ![](img/3fourier_plot_tux.gif)
 
 ## Youtube demo 影片
@@ -116,6 +116,10 @@ q = 2:N;
 k = k(id);
 q = q(id);
 ```
+$$y_n = \frac{1}{N} \sum^{\frac{N}{2}}_{k = -\frac{N}{2} + 1} z_k e^{j k \cdot \frac{n \cdot 2\pi}{N}}$$
+
+$$z_k = \mathrm{fft}(y_n) = \sum^{N - 1}_{k = 0} y_n e^{-j k \cdot \frac{n \cdot 2\pi}{N}}, \text{where } t = \frac{n \cdot 2\pi}{N}$$
+
 除了第1筆數值(代表所有點的平均數，旋轉頻率為0的圓)之外，提取第2筆到最後一筆數據，由複數平面轉極座標$z = x + iy = |z|(\cos\theta + \sin\theta) = |z|e^{i\theta}$，根據複數的半徑大小進行排序，`k`代表單位圓旋轉的頻率，假設有`N = 5`代表4個單位圓非0的旋轉頻率，即是$1, 2, -2, -1$，假設`N = 6`代表有5個單位圓非0的旋轉頻率，即是$1, 2, 3, -2, -1$或是$1, 2, -3, -2, -1$，其中要決定$+3$或是$-3$頻率轉都可以，這邊代碼我是選擇要讓$-3$的頻率轉；`q`代表提取矩陣的index。
 ```matlab
 %% plot
@@ -149,9 +153,7 @@ for n = 1:length(t)
 %     pause(0.01);
 end
 ```
-$$\int^{2\pi}_0 [Z(1) e^{i \cdot 0t} + Z(2) e^{i \cdot 1t} + Z(3) e^{i \cdot 2t} + \ldots + Z(\frac{N}{2} + 1) e^{i \cdot \frac{N}{2}t} +$$
-$$Z(\frac{N}{2} + 2)e^{i \cdot (-\frac{N}{2} + 1)t} + Z(\frac{N}{2} + 3)e^{i \cdot (-\frac{N}{2} + 2)t} + Z(N)e^{i \cdot (-1)t}] dt$$
-使用離散的數值運算去逼近上式的連續型，將各個單位圓相加，實際上就是藉由分解後的基底函數做原始訊號重建的過程 - 首先`z0 = Z(1)`數值為平均數，加上前面代碼所排序出最大的單位圓`z1 = z0 + Z(q(1))*exp(1i*k(1)*t(n))`，一直加到`j = 1:length(k) - 5`為止，扣除5的原因是把半徑最小的5筆單位圓去除，讓曲線更平滑。
+根據前一式，將各個單位圓相加，並使$t$從$0$掃至$2\pi$讓每個圓都能完整跑完一個周期以上，就能畫出自定義的封閉曲線，實際上就是藉由分解後的基底函數做原始訊號重建的過程 - 首先`z0 = Z(1)`數值為平均數，加上前面代碼所排序出最大的單位圓`z1 = z0 + Z(q(1))*exp(1i*k(1)*t(n))`，一直加到`j = 1:length(k) - 5`為止，扣除5的原因是把半徑最小的5筆單位圓去除，讓曲線更平滑。
 
 ---
 
